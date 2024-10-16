@@ -1,8 +1,8 @@
 // Ejercicio 1: Condicionales if-else
 // Instrucción: Escribe una función que reciba un número y verifique si es par o impar.
-// Imprime "El número es par" o "El número es impar" según corresponda.
+// Corrigiendo el comportamiento para números negativos
 function verificarParidad(numero) {
-    if (numero % 2 === 0) {
+    if (Math.abs(numero) % 2 === 0) {  // Usamos Math.abs() para convertir a valor absoluto
         console.log("El número es par");
     } else {
         console.log("El número es impar");
@@ -121,13 +121,14 @@ function esVocal(letra) {
 
 // Ejercicio 10: Condicionales complejos con operadores lógicos
 // Instrucción: Escribe una función que reciba tres números y determine si todos son positivos, al menos uno es negativo, o todos son negativos. Usa operadores lógicos (`&&`, `||`).
+
 function evaluarNumeros(a, b, c) {
     if (a > 0 && b > 0 && c > 0) {
         console.log("Todos son positivos");
-    } else if (a < 0 || b < 0 || c < 0) {
-        console.log("Al menos uno es negativo");
     } else if (a < 0 && b < 0 && c < 0) {
         console.log("Todos son negativos");
+    } else if (a < 0 || b < 0 || c < 0) {
+        console.log("Al menos uno es negativo");
     } else {
         console.log("No se cumple ninguna de las condiciones anteriores");
     }
